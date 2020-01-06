@@ -16,7 +16,7 @@ Convolution Neural Network is a class of Deep Neural Networks which is mainly de
 
 # Pre-requisites
 Download and install the following module: <br> 
-1)tensorflow- pip install keras <br>
+1)keras - pip install keras <br>
 
 # Author
 Pranav Raikote
