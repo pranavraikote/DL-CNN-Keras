@@ -54,6 +54,9 @@ _, acc = model.evaluate(testX, testY)
 print("Accuracy is {}%".format(acc*100))
 
 #Predictions for the sample images
-model.predict(trainX[20:21])
-model.predict(trainX[21:22])
-model.predict(trainX[22:23])
+a = model.predict(trainX[20:21])
+b = model.predict(trainX[21:22])
+c = model.predict(trainX[22:23])
+print(a.argmax)
+print(b.argmax)
+print(c.argmax)
