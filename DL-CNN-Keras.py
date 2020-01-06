@@ -18,9 +18,9 @@ print("TrainX shape {} TrainY shape {}".format(trainX.shape, trainY.shape))
 print("TestX shape {} TestY shape {}".format(testX.shape, testY.shape))
 
 #Show samples
-plt.imshow(trainX[20]) #4
-plt.imshow(trainX[21]) #0
-plt.imshow(trainX[22]) #9
+plt.imshow(trainX[20]) #Digit 4
+plt.imshow(trainX[21]) #Digit 0
+plt.imshow(trainX[22]) #Digit 9
 
 #Reshaping data
 trainX = trainX.reshape(60000, 28, 28, 1)
@@ -57,6 +57,6 @@ print("Accuracy is {}%".format(acc*100))
 a = model.predict(trainX[20:21])
 b = model.predict(trainX[21:22])
 c = model.predict(trainX[22:23])
-print(a.argmax)
-print(b.argmax)
-print(c.argmax)
+print(a.argmax())
+print(b.argmax())
+print(c.argmax())
