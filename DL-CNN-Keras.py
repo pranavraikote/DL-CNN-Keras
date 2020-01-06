@@ -29,22 +29,20 @@ testY = utils.to_categorical(testY)
 
 #Building the CNN Model
 model = Sequential()
-#Convolution Layers
-model.add(Conv2D(32, kernel_size=3, activation='relu', input_shape=(28,28,1)))
-model.add(Conv2D(64, kernel_size=3, activation='relu'))
-#Pooling Layer
+#Adding Convolutional Layer
+model.add(Conv2D(64, kernel_size=3, activation='relu', input_shape=(28,28,1)))
+#Adding Pooling Layer
 model.add(MaxPooling2D((2, 2)))
-#Convolution Layers
-model.add(Conv2D(128, kernel_size=3, activation='relu'))
-#Pooling Layer
+#Adding Convolutional Layer
+model.add(Conv2D(32, kernel_size=3, activation='relu'))
+#Adding Pooling Layer
 model.add(MaxPooling2D((2, 2)))
-#Flatten and Dense-Fully Connected Layers
+#Flattening and Dense-Fully Connected Layer
 model.add(Flatten())
 model.add(Dense(10, activation='softmax'))
 
-#model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-#Adding the Stochastic Gradient Descent function
-s_grad_d = optimizers.SGD(lr=0.01, decay=1e-6)
-model.compile(optimizer=s_grad_d, loss='categorical_crossentropy', metrics =['accuracy'])
+#Compile model with Adam Optimizer
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics =['accuracy'])
+
 #Train the model
 model.fit(trainX, trainY, validation_data=(testX, testY), epochs=3)
