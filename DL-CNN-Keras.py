@@ -17,8 +17,10 @@ from keras import optimizers
 print("TrainX shape {} TrainY shape {}".format(trainX.shape, trainY.shape))
 print("TestX shape {} TestY shape {}".format(testX.shape, testY.shape))
 
-#Show one sample
-plt.imshow(trainX[20])
+#Show samples
+plt.imshow(trainX[20]) #4
+plt.imshow(trainX[21]) #0
+plt.imshow(trainX[22]) #9
 
 #Reshaping data
 trainX = trainX.reshape(60000, 28, 28, 1)
@@ -46,3 +48,12 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics =['accu
 
 #Train the model
 model.fit(trainX, trainY, validation_data=(testX, testY), epochs=3)
+
+#Accuracy Metrics
+_, acc = model.evaluate(testX, testY)
+print("Accuracy is {}%".format(acc*100))
+
+#Predictions for the sample images
+model.predict(trainX[20:21])
+model.predict(trainX[21:22])
+model.predict(trainX[22:23])
