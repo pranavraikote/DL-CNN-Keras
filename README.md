@@ -1,5 +1,5 @@
 # DL-CNN-Keras
-Implementation of Basic CNN using Keras
+Implementation of Digit Classifier using CNN-Keras
 
 # About
 This is the implementation of a CNN on MNIST data set. It's basically a handwritten digit database of 60000 training example and 10000 testing examples. It is recognition of an image on which a digit is written in a normal handwriting. <br>
